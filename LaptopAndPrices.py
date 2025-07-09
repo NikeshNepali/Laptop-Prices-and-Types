@@ -57,6 +57,8 @@ df = df.dropna()
 # Changing the required data Types.
 df['Weight'] = df['Weight'].astype(float)
 print(df.isnull().sum())
+
+# Cleaned Data Types
 print(df.dtypes)
 
 # Changing Data Types
