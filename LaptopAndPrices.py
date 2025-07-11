@@ -1,8 +1,8 @@
 # Importing the required modules.
 import pandas as pd
 import seaborn as sns
-import numpy as np
 import matplotlib.pyplot as plt
+import re # Importing new module.
 from kaggle.api.kaggle_api_extended import KaggleApi
 
 # AUthenticating the API
@@ -78,6 +78,7 @@ print(df.dtypes)
 print(df.tail())
 
 
+plt.figure(figsize=(8,10))
 # Now making the necessary graphs.
 MostOSUsed = df['OpSys'].value_counts().reset_index()
 MostOSUsed.columns = ['OpSys','Count']
@@ -96,6 +97,74 @@ plt.title("Most Used Operating System")
 plt.xlabel("OpSys")
 plt.ylabel("Counts")
 plt.tight_layout()
+
+# Making bar graph for ScreenResolution.
+plt.figure(figsize=(8,10))
+MostSRUsed = df['ScreenResolution'].value_counts().head(5).reset_index() # Gives the top 5 results.
+MostSRUsed.columns = ['ScreenResolution','Counter']
+
+# Plotting the bar graph.
+ax2 = sns.barplot(x= 'ScreenResolution', y ='Counter' ,data=MostSRUsed, color = 'red' )
+for bar in ax2.patches:
+    height = bar.get_height()
+    ax2.text(bar.get_x() + bar.get_width()/2,
+            height,
+            f'{height:.0f}',
+            ha = 'center',
+            va = 'bottom')
+
+# Writing the title and labeling it.
+plt.title("Most Used Operating System")
+plt.xlabel("Screen Resoulution")
+plt.ylabel("Counter")
+plt.tight_layout()
+
+# Stacked Bar Chart. 
+# Top 5 Screen Resolution
+top5_Resolution = df["ScreenResolution"].value_counts().head(5).index.to_list() # Gives top 5 results.
+# Creating pivot table from top 5 values using OpSys Index.
+cound_df = df.pivot_table(index= "OpSys", columns= "ScreenResolution", aggfunc= "size",fill_value= 0)
+top5_df = cound_df[top5_Resolution] # Top 5 results.
+
+# MComstructing the figure.
+ax4 = top5_df.plot(kind= 'bar',stacked= True,figsize= (8,10),colormap= 'tab20')
+
+# Labeling the stacked bar chart figure.
+for bar in ax4.patches:
+    width = bar.get_width()
+    height = bar.get_height()
+    x = bar.get_x()
+    y = bar.get_y()
+    if height > 10:
+        ax4.text(x+ width/2,
+             y + height/2,
+             f'{height:.0f}',
+             ha = 'center',
+             va = 'center',
+             fontsize = 9,
+             color = 'black')
+
+# Proper title and labeling.        
+plt.ylabel("Count")
+plt.title("Count of top 5 screenResolution per operating system")
+plt.tight_layout()
+
+# Finding the relationship between price and storage.
+# Using lambda and re module to covert tb into gb.
+df['Storage'] = df['Storage'].apply(
+    lambda a: int(re.search(r"(\d+)",a).group()) * (1024 if "TB" in a.upper() else 1))
+
+
+# Constructing the scatter plot.
+windows_df = df[df["Company"]== "Apple"] # Only apple data.
+plt.figure(figsize=(8,10))
+# Making it with seaborn.
+sns.scatterplot(data = windows_df, x = "Storage",y = "Price")
+
+# Scatter plot with matplot to find the relationship between weight and price.
+plt.figure(figsize=(8,10))
+plt.scatter(df['Weight'],df["Price"])
+
 
 plt.show()
 
