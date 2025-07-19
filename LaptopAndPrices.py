@@ -78,7 +78,7 @@ print(df.dtypes)
 print(df.tail())
 
 
-plt.figure(figsize=(8,10))
+plt.figure(figsize=(8,6))
 # Now making the necessary graphs.
 MostOSUsed = df['OpSys'].value_counts().reset_index()
 MostOSUsed.columns = ['OpSys','Count']
@@ -99,7 +99,7 @@ plt.ylabel("Counts")
 plt.tight_layout()
 
 # Making bar graph for ScreenResolution.
-plt.figure(figsize=(8,10))
+plt.figure(figsize=(8,6))
 MostSRUsed = df['ScreenResolution'].value_counts().head(5).reset_index() # Gives the top 5 results.
 MostSRUsed.columns = ['ScreenResolution','Counter']
 
@@ -114,9 +114,10 @@ for bar in ax2.patches:
             va = 'bottom')
 
 # Writing the title and labeling it.
-plt.title("Most Used Operating System")
+plt.title("Screen Resolution best in use")
 plt.xlabel("Screen Resoulution")
 plt.ylabel("Counter")
+plt.xticks(fontsize = 8)
 plt.tight_layout()
 
 # Stacked Bar Chart. 
@@ -146,6 +147,8 @@ for bar in ax4.patches:
 
 # Proper title and labeling.        
 plt.ylabel("Count")
+plt.xlabel("Screen Resolution and operating system")
+plt.xticks(fontsize = 6)
 plt.title("Count of top 5 screenResolution per operating system")
 plt.tight_layout()
 
@@ -157,13 +160,17 @@ df['Storage'] = df['Storage'].apply(
 
 # Constructing the scatter plot.
 windows_df = df[df["Company"]== "Apple"] # Only apple data.
-plt.figure(figsize=(8,10))
+plt.figure(figsize=(8,6))
 # Making it with seaborn.
 sns.scatterplot(data = windows_df, x = "Storage",y = "Price")
+plt.title("The relationship between Storage and and price.")
 
 # Scatter plot with matplot to find the relationship between weight and price.
-plt.figure(figsize=(8,10))
+plt.figure(figsize=(8,6))
 plt.scatter(df['Weight'],df["Price"])
+plt.title("The relationship between Weight and Price")
+plt.xlabel("Price")
+plt.ylabel("Weight")
 
 
 plt.show()
