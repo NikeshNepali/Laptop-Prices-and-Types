@@ -7,7 +7,7 @@ The project analyzes the laptop datasets which compares with different companies
 I used the datasets from the kaggle.com.
 This is the original dataset in csv form:
  https://www.kaggle.com/datasets/ehtishamsadiq/uncleaned-laptop-price-dataset?select=laptopData.csv 
-
+## Explaratory Data Analysis
 But in order to do this project I have used the API to get the data source and perform the analysis.
 - The features of the datasets are:
  - These were the attriputes :
@@ -22,7 +22,6 @@ But in order to do this project I have used the API to get the data source and p
  - LaptopAndPrices.py - main Script with everthing in it.
  - uncleaned_laptop  - csv file for analysis.
 
-## Explaratory Data Analysis
  - Most used operating system. (Bar Chart.)
   ![Most Used OS](image.png)
  - Best in use Screen Resolution.(Bar Chart.)
