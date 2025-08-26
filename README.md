@@ -21,7 +21,7 @@ But in order to do this project I have used the API to get the data source and p
 ## Project Structure
  - LaptopAndPrices.py - main Script with everthing in it.
  - uncleaned_laptop  - csv file for analysis.
-
+## Visualization
  - Most used operating system. (Bar Chart.)
   ![Most Used OS](image.png)
  - Best in use Screen Resolution.(Bar Chart.)
