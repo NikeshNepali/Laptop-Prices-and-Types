@@ -1,35 +1,35 @@
 # 💻 Laptop Prices and Types Analysis
 ## 📊 Overview
 
-This project focuses on analyzing a dataset of laptops collected from various brands to identify patterns based on hardware specifications, screen resolution, weight, price, and more. The goal is to explore how various features affect laptop pricing and popularity using data cleaning and visualization techniques.
+- This project focuses on analyzing a dataset of laptops collected from various brands to identify patterns based on hardware specifications, screen resolution, weight, price, and more. The goal is to explore how various features affect laptop pricing and popularity using data cleaning and visualization techniques.
 
 ## 📁 Dataset
 
-Source: Kaggle
+- Source: Kaggle
 
-**Link: https://www.kaggle.com/datasets/ehtishamsadiq/uncleaned-laptop-price-dataset?select=laptopData.csv**
+- **Link: https://www.kaggle.com/datasets/ehtishamsadiq/uncleaned-laptop-price-dataset?select=laptopData.csv**
 
 ## 🧹 Exploratory Data Analysis (EDA)
 
-To perform this analysis, I used the Kaggle API to fetch the dataset programmatically. The original dataset includes the following features:
+- To perform this analysis, I used the Kaggle API to fetch the dataset programmatically. The original dataset includes the following features:
 
 ## 📌 Attributes:
 
-Company, TypeName, Inches, ScreenResolution, Cpu, Ram, Memory, Gpu, OpSys, Weight, Price
+- Company, TypeName, Inches, ScreenResolution, Cpu, Ram, Memory, Gpu, OpSys, Weight, Price
 
 ## 🧼 Cleaning Steps:
 
-Corrected spelling errors
+- Corrected spelling errors
 
-Converted data types (e.g., removed units from RAM and Weight)
+- Converted data types (e.g., removed units from RAM and Weight)
 
-Extracted new columns from composite fields (e.g., separated Memory into Storage and Storage Type)
+- Extracted new columns from composite fields (e.g., separated Memory into Storage and Storage Type)
 
-Removed missing values and unnecessary columns
+- Removed missing values and unnecessary columns
 
 ## 📁 Project Structure
-LaptopAndPrices.py        # Main script for data cleaning and visualization  
-uncleaned_laptop.csv      # Original dataset file
+- LaptopAndPrices.py        # Main script for data cleaning and visualization  
+- uncleaned_laptop.csv      # Original dataset file
 
 ## 📊 Visualizations
 ### 1. Most Used Operating Systems (Bar Chart)
@@ -37,51 +37,53 @@ uncleaned_laptop.csv      # Original dataset file
 
 
 ### 2. Most Common Screen Resolutions (Bar Chart)
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/efcefe10-0f38-4871-bddd-7c74aa754ae0" />
+
 
 ### 3. Top 5 Screen Resolutions by Operating System (Stacked Bar Chart)
 
 ### 4. Price vs. Storage (Scatter Plot)
 
-Assumes a positive trend between storage capacity and laptop price
+- Assumes a positive trend between storage capacity and laptop price
 
 
 ### 5. Price vs. Weight (Scatter Plot)
 
-Assumes correlation between laptop weight and price
+- Assumes correlation between laptop weight and price
 
 
 ## ⚙️ Methodology
 
 - Used Pandas for data cleaning and transformation
 
-Visualized insights using Matplotlib and Seaborn
+- Visualized insights using Matplotlib and Seaborn
 
-Fetched data directly via Kaggle API
+- Fetched data directly via Kaggle API
 
-Engineered two new features:
+- Engineered two new features:
 
-Storage (in GB)
+- Storage (in GB)
 
-Storage Type (HDD, SSD, Hybrid, etc.)
+- Storage Type (HDD, SSD, Hybrid, etc.)
 
 ## ✅ Results & Insights
 
-Windows is the most commonly used OS (over 1000 entries)
+- Windows is the most commonly used OS (over 1000 entries)
 
-Full HD is the most popular screen resolution (~400 occurrences)
+- Full HD is the most popular screen resolution (~400 occurrences)
 
-Unknown Screen Resolutions appear frequently across OS types, but Full HD dominates among Windows devices
+- Unknown Screen Resolutions appear frequently across OS types, but Full HD dominates among Windows devices
 
-Storage shows a positive correlation with Price
+- Storage shows a positive correlation with Price
 
-Weight also appears to influence Price, assuming heavier laptops with higher specs cost more
+- Weight also appears to influence Price, assuming heavier laptops with higher specs cost more
 
 ## 📚 Learnings
 
-Strengthened my skills in data wrangling using pandas
+- Strengthened my skills in data wrangling using pandas
 
-Gained experience in building visual insights from raw data
+- Gained experience in building visual insights from raw data
 
-Practiced using real-world messy data and deriving structure from it
+- Practiced using real-world messy data and deriving structure from it
 
-Learned how to use Kaggle’s API for accessing datasets programmatically
+- Learned how to use Kaggle’s API for accessing datasets programmatically
