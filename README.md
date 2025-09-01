@@ -41,6 +41,8 @@
 
 
 ### 3. Top 5 Screen Resolutions by Operating System (Stacked Bar Chart)
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/c62897fc-8fe6-459b-a539-bc1fe9e4d539" />
+
 
 ### 4. Price vs. Storage (Scatter Plot)
 
