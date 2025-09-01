@@ -33,6 +33,8 @@ uncleaned_laptop.csv      # Original dataset file
 
 ## 📊 Visualizations
 ### 1. Most Used Operating Systems (Bar Chart)
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/83277ff9-3d98-4aaf-83c4-37c0efd2d76c" />
+
 
 ### 2. Most Common Screen Resolutions (Bar Chart)
 
@@ -50,7 +52,7 @@ Assumes correlation between laptop weight and price
 
 ## ⚙️ Methodology
 
-Used Pandas for data cleaning and transformation
+- Used Pandas for data cleaning and transformation
 
 Visualized insights using Matplotlib and Seaborn
 
