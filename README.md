@@ -46,13 +46,13 @@
 
 ### 4. Price vs. Storage (Scatter Plot)
 
-- Assumes a positive trend between storage capacity and laptop price
+- Assumption of positive trend between storage capacity and laptop price
 <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/378ef86c-3954-4b7a-bd67-6c767773d21e" />
 
 
 ### 5. Price vs. Weight (Scatter Plot)
 
-- Assumes correlation between laptop weight and price
+- Assumption correlation between laptop weight and price
 
 
 ## ⚙️ Methodology
